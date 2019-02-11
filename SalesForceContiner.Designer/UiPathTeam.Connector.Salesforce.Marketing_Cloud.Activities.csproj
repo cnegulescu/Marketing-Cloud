@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{761BED73-C35C-422C-AC1F-486A1E06D2A9}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UiPathTeam.Salesforce.Marketing_Cloud.Activities</RootNamespace>
+    <AssemblyName>UiPathTeam.Salesforce.Marketing_Cloud.Activities</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Campaign\AddCampaign.xaml.cs">
+      <DependentUpon>AddCampaign.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Campaign\DeleteCampaign.xaml.cs">
+      <DependentUpon>DeleteCampaign.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Campaign\GetCampaignList.xaml.cs">
+      <DependentUpon>GetCampaignList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Campaign\UpdateCampaign.xaml.cs">
+      <DependentUpon>UpdateCampaign.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CheckIDWizard.xaml.cs">
+      <DependentUpon>CheckIDWizard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommandResult.xaml.cs">
+      <DependentUpon>CommandResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataExtensionObject\AddDataExtensionObject.xaml.cs">
+      <DependentUpon>AddDataExtensionObject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataExtensionObject\DeleteDataExtensionObject.xaml.cs">
+      <DependentUpon>DeleteDataExtensionObject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataExtensionObject\GetDataExtensionObjectList.xaml.cs">
+      <DependentUpon>GetDataExtensionObjectList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataExtensionObject\UpdateDataExtensionObject.xaml.cs">
+      <DependentUpon>UpdateDataExtensionObject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataExtension\AddDataExtension.xaml.cs">
+      <DependentUpon>AddDataExtension.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataExtension\DeleteDataExtension.xaml.cs">
+      <DependentUpon>DeleteDataExtension.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataExtension\GetDataExtensionList.xaml.cs">
+      <DependentUpon>GetDataExtensionList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataExtension\UpdateDataExtension.xaml.cs">
+      <DependentUpon>UpdateDataExtension.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormatCombobox.xaml.cs">
+      <DependentUpon>FormatCombobox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormatDateTimeSFDCAPI.xaml.cs">
+      <DependentUpon>FormatDateTimeSFDCAPI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormatListBox.xaml.cs">
+      <DependentUpon>FormatListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GetData.xaml.cs">
+      <DependentUpon>GetData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Subscriber\AddSubscriber.xaml.cs">
+      <DependentUpon>AddSubscriber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Subscriber\DeleteSubscriber.xaml.cs">
+      <DependentUpon>DeleteSubscriber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Subscriber\GetSubscriberList.xaml.cs">
+      <DependentUpon>GetSubscriberList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Subscriber\UpdateSubscriber.xaml.cs">
+      <DependentUpon>UpdateSubscriber.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="List\AddList.xaml.cs">
+      <DependentUpon>AddList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="List\DeleteList.xaml.cs">
+      <DependentUpon>DeleteList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="List\GetListList.xaml.cs">
+      <DependentUpon>GetListList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="List\UpdateList.xaml.cs">
+      <DependentUpon>UpdateList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectDesigner.xaml.cs">
+      <DependentUpon>SelectDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectWizard.xaml.cs">
+      <DependentUpon>SelectWizard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SmallClassDefenition.cs" />
+    <Page Include="Campaign\AddCampaign.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Campaign\DeleteCampaign.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Campaign\GetCampaignList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Campaign\UpdateCampaign.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CheckIDWizard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CommandResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataExtensionObject\AddDataExtensionObject.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataExtensionObject\DeleteDataExtensionObject.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataExtensionObject\GetDataExtensionObjectList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataExtensionObject\UpdateDataExtensionObject.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataExtension\AddDataExtension.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataExtension\DeleteDataExtension.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataExtension\GetDataExtensionList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataExtension\UpdateDataExtension.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FormatCombobox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FormatDateTimeSFDCAPI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="FormatListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GetData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Subscriber\AddSubscriber.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Subscriber\DeleteSubscriber.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Subscriber\GetSubscriberList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Subscriber\UpdateSubscriber.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="List\AddList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="List\DeleteList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="List\GetListList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="List\UpdateList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ParametersWizard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SalesForceContinerDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="DesignerMetadata.cs" />
+    <Compile Include="ParametersWizard.xaml.cs">
+      <DependentUpon>ParametersWizard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SalesForceContinerDesigner.xaml.cs">
+      <DependentUpon>SalesForceContinerDesigner.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SelectDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="SelectWizard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SalesForceContiner\UiPathTeam.Connector.Salesforce.Marketing_Cloud.csproj">
+      <Project>{fec8bb65-ca34-4307-a23d-edd14616b831}</Project>
+      <Name>UiPathTeam.Connector.Salesforce.Marketing_Cloud</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Add_Asset_2.png" />
+    <Resource Include="Icons\Add_Custom_2.png" />
+    <Resource Include="Icons\Add_Opportunity_2.png" />
+    <Resource Include="Icons\Delete_Asset_2.png" />
+    <Resource Include="Icons\Delete_Custom_2.png" />
+    <Resource Include="Icons\Delete_Link_File.png" />
+    <Resource Include="Icons\Delete_Opportunity_2.png" />
+    <Resource Include="Icons\Get_Account_ID.png" />
+    <Resource Include="Icons\Get_Asset.png" />
+    <Resource Include="Icons\Get_Campaign.png" />
+    <Resource Include="Icons\Get_Case.png" />
+    <Resource Include="Icons\Get_Contact.png" />
+    <Resource Include="Icons\Get_Data.png" />
+    <Resource Include="Icons\Get_Data_Wizard_2.png" />
+    <Resource Include="Icons\Get_Lead.png" />
+    <Resource Include="Icons\Get_Opportunity.png" />
+    <Resource Include="Icons\Get_Opportunity_Item.png" />
+    <Resource Include="Icons\Get_Task.png" />
+    <Resource Include="Icons\Salesforce_Scope_2.png" />
+    <Resource Include="Icons\Update_Asset_2.png" />
+    <Resource Include="Icons\Update_Custom_2.png" />
+    <Resource Include="Icons\Update_Opportunity_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Add_Account.png" />
+    <Resource Include="Icons\Add_Asset.png" />
+    <Resource Include="Icons\Add_Campaign.png" />
+    <Resource Include="Icons\Add_Case.png" />
+    <Resource Include="Icons\Add_Contact.png" />
+    <Resource Include="Icons\Add_Custom.png" />
+    <Resource Include="Icons\Add_File.png" />
+    <Resource Include="Icons\Add_Lead.png" />
+    <Resource Include="Icons\Add_Opportunity.png" />
+    <Resource Include="Icons\Add_Opportunity_Item.png" />
+    <Resource Include="Icons\Add_Task.png" />
+    <Resource Include="Icons\Assign_File.png" />
+    <Resource Include="Icons\Delete_Account.png" />
+    <Resource Include="Icons\Delete_Campaign.png" />
+    <Resource Include="Icons\Delete_Case.png" />
+    <Resource Include="Icons\Delete_Custom.png" />
+    <Resource Include="Icons\Delete_File.png" />
+    <Resource Include="Icons\Delete_Lead.png" />
+    <Resource Include="Icons\Delete_Opportunity.png" />
+    <Resource Include="Icons\Delete_Opportunity_Item.png" />
+    <Resource Include="Icons\Delete_Task.png" />
+    <Resource Include="Icons\Get_Data_Wizzard.png" />
+    <Resource Include="Icons\Remove_Asset.png" />
+    <Resource Include="Icons\Remove_Contact.png" />
+    <Resource Include="Icons\Update_Account.png" />
+    <Resource Include="Icons\Update_Asset.png" />
+    <Resource Include="Icons\Update_Campaign.png" />
+    <Resource Include="Icons\Update_Case.png" />
+    <Resource Include="Icons\Update_Contact.png" />
+    <Resource Include="Icons\Update_Custom.png" />
+    <Resource Include="Icons\Update_File.png" />
+    <Resource Include="Icons\Update_Lead.png" />
+    <Resource Include="Icons\Update_Opportunity.png" />
+    <Resource Include="Icons\Update_Opportunity_Item.png" />
+    <Resource Include="Icons\Update_Task.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Get_Data_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Get_Data_4.png" />
+    <Resource Include="Icons\Get_Data_Wizard_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Get_Data_Wizard_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Get_File.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Get_Account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\ADD_Contracts.png" />
+    <Resource Include="Icons\ADD_Order.png" />
+    <Resource Include="Icons\ADD_Quote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\ADD_PriceBook.png" />
+    <Resource Include="Icons\ADD_Product.png" />
+    <Resource Include="Icons\Delete_Contracts.png" />
+    <Resource Include="Icons\Delete_Order.png" />
+    <Resource Include="Icons\Delete_PriceBook.png" />
+    <Resource Include="Icons\Delete_Product.png" />
+    <Resource Include="Icons\Delete_Quote.png" />
+    <Resource Include="Icons\Get_Contracts.png" />
+    <Resource Include="Icons\Get_Order.png" />
+    <Resource Include="Icons\Get_PriceBook.png" />
+    <Resource Include="Icons\Get_Product.png" />
+    <Resource Include="Icons\Get_Quote.png" />
+    <Resource Include="Icons\Update_Contracts.png" />
+    <Resource Include="Icons\Update_Order.png" />
+    <Resource Include="Icons\Update_PriceBook.png" />
+    <Resource Include="Icons\Update_Product.png" />
+    <Resource Include="Icons\Update_Quote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\TransData.png" />
+    <Resource Include="Icons\TransString.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Generic.png" />
+    <Resource Include="Icons\ID.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\Report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\TransCombobox.png" />
+    <Resource Include="Icons\TransListbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\BeginCollect.png" />
+    <Resource Include="Icons\SendCollect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\DownloadFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\SendMesssage.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Debug "$(SolutionDir).nuget\NuGet.exe" pack "$(ProjectPath)"  -IncludeReferencedProjects -Prop Configuration=$(ConfigurationName)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

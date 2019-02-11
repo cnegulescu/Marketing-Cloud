@@ -1,0 +1,33 @@
+﻿<Window x:Class="UiPathTeam.Salesforce.Marketing_Cloud.Activities.CheckIDWizard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Example data for" Height="450" Width="559" MinHeight="450" MinWidth="550" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Topmost="True" ResizeMode="NoResize">
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Name="RowToHide" Height="75"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,0,4,0" Grid.ColumnSpan="2" Name="GridToHide">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox x:Name="ckName" Content="Account Name" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Checked="ckName_Checked" Unchecked="ckName_Unchecked"/>
+            <TextBox x:Name="tbName" HorizontalAlignment="Stretch" Height="23" Margin="10,42,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Button x:Name="btGetData" Grid.Column="1" Content="Get Data" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" Click="Button_Click"/>
+        </Grid>
+        <Grid Grid.Row="1" Margin="1,1,1,1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Filter results:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Stretch"/>
+            <TextBox x:Name="tbFilter" Grid.Column="1" HorizontalAlignment="Stretch" Margin="3,3,3,3" Text="" VerticalAlignment="Stretch" TextChanged="tbFilter_TextChanged"/>
+        </Grid>
+        <DataGrid x:Name="ResultGridView" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1,1,1,1" CanUserResizeColumns="False" CanUserReorderColumns="False" AutomationProperties.IsColumnHeader="True" ColumnWidth="*" IsReadOnly="True" SelectionUnit="FullRow" Grid.ColumnSpan="2" MouseDoubleClick="ResultGridView_MouseDoubleClick"/>
+    </Grid>
+</Window>

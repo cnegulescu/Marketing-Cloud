@@ -1,0 +1,115 @@
+﻿<Window x:Class="UiPathTeam.Salesforce.Marketing_Cloud.Activities.SelectWizard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Get Data Wizard" Height="500" Width="743" MinHeight="450" MinWidth="550" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded"  ResizeMode="CanResizeWithGrip">
+    <Grid x:Name="MainGrid" Margin="0,0,0,0">
+        <TabControl Name="tabControl1" SelectionChanged="tabControl1_SelectionChanged">
+            <TabItem Header="Command">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Name="RowToHide"  Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="150"/>
+                        </Grid.ColumnDefinitions>
+                        <Button  Grid.Column="0" x:Name="btRunCmd" Content="Run select command" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" Foreground="#FF1750E8" FontWeight="Bold" FontSize="18" Click="btRunCmd_Click"/>
+                        <Button  Grid.Column="1" x:Name="btSave" Content="Save" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch" Foreground="#FF0E7213" FontWeight="Bold" FontSize="18" Click="btSave_Click" />
+                    </Grid>
+
+                    <Grid Name="GridFilters" Grid.Row="1" Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" x:Name="lbExample" Content="Example of commands:" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                        <ComboBox Grid.Column="1" x:Name="cbCommand" Grid.Row="1" HorizontalAlignment="Stretch" Margin="10,2,10,2" VerticalAlignment="Stretch" ItemsSource="{Binding ListEnumCmd}" 
+            DisplayMemberPath="ValueName" 
+            SelectedValuePath="ValueString" 
+            SelectedValue="{Binding ViewModelEnum.Name}" SelectionChanged="cbCommand_SelectionChanged"/>
+                    </Grid>
+
+                    <RichTextBox Name="tbSelectCMD" Grid.Row="2" HorizontalAlignment="Stretch" Margin="1,1,1,1" VerticalAlignment="Stretch" Grid.ColumnSpan="2">
+                        <FlowDocument>
+                            <Paragraph>
+                                <Run Text=""/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Result">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" x:Name="lbCmdRes" Content="Result for the command:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+                    <TextBox TextWrapping="Wrap" Grid.Row="1" x:Name="tbCommand" IsEnabled="False" VerticalScrollBarVisibility="Visible"  HorizontalAlignment="Stretch" Margin="10,5,10,5" VerticalAlignment="Stretch" Grid.ColumnSpan="2"/>
+                    <DataGrid x:Name="ResultGridView2" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1,1,1,1" CanUserResizeColumns="False" CanUserReorderColumns="False" AutomationProperties.IsColumnHeader="True" ColumnWidth="*" IsReadOnly="True" SelectionUnit="FullRow" Grid.ColumnSpan="2"/>
+                    <Label x:Name="rowcount" Content="Number of rows: 0" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Information">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="160"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" x:Name="lbObjectName" Content="Object name" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                            <ComboBox x:Name="cbType" Grid.Row="1" HorizontalAlignment="Stretch" Margin="10,5,10,5" VerticalAlignment="Stretch" ItemsSource="{Binding ListEnum}" 
+            DisplayMemberPath="ValueName" 
+            SelectedValuePath="ValueString" 
+            SelectedValue="{Binding ViewModelEnum.Name}" IsEditable="True" SelectionChanged="cbType_SelectionChanged" />
+                            <Label Grid.Row="1" x:Name="lbObjectValue" Content="Object name" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Foreground="#FF138707"/>
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <CheckBox Grid.Row="0"  x:Name="cbID" Content="ID" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Checked="cbID_Checked" Unchecked="cbID_Unchecked"/>
+                            <TextBox Grid.Row="1" x:Name="tbID" HorizontalAlignment="Stretch" Margin="10,5,10,5" VerticalAlignment="Stretch" IsEnabled="False" />
+                        </Grid>
+
+                        <Button x:Name="btGetData" Grid.Column="2" Content="Get Data" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Stretch"  FontWeight="Bold" FontSize="18" Click="btGetData_Click"/>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" x:Name="lbFilters" Content="Filter result:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                        <TextBox Grid.Column="1" x:Name="tbDisplay" HorizontalAlignment="Stretch" Margin="10,3,10,3" VerticalAlignment="Stretch" TextChanged="tbDisplay_TextChanged"/>
+                    </Grid>
+
+                    <DataGrid x:Name="ResultGridView" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1,1,1,1" CanUserResizeColumns="False" CanUserReorderColumns="False" AutomationProperties.IsColumnHeader="True" ColumnWidth="*" IsReadOnly="True" SelectionUnit="FullRow" Grid.ColumnSpan="2" MouseDoubleClick="ResultGridView_MouseDoubleClick"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

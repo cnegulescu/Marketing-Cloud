@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FEC8BB65-CA34-4307-A23D-EDD14616B831}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UiPathTeam.Salesforce.Marketing_Cloud</RootNamespace>
+    <AssemblyName>UiPathTeam.Salesforce.Marketing_Cloud</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RestSharp, Version=105.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.0.1\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Activities">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Campaign\Add_Campaign.cs" />
+    <Compile Include="Campaign\Delete_Campaign.cs" />
+    <Compile Include="Campaign\Get_Campaign_List.cs" />
+    <Compile Include="Campaign\Update_Campaign.cs" />
+    <Compile Include="Connected Services\MCser\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DataExtensionObject\Add_DataExtensionObject.cs" />
+    <Compile Include="DataExtensionObject\Delete_DataExtensionObject.cs" />
+    <Compile Include="DataExtensionObject\Get_DataExtensionObject_List.cs" />
+    <Compile Include="DataExtensionObject\Update_DataExtensionObject.cs" />
+    <Compile Include="DataExtension\Add_DataExtension.cs" />
+    <Compile Include="DataExtension\Delete_DataExtension.cs" />
+    <Compile Include="DataExtension\Get_DataExtension_List.cs" />
+    <Compile Include="DataExtension\Update_DataExtension.cs" />
+    <Compile Include="Format_Combobox_SFDC_API.cs" />
+    <Compile Include="Format_DateTime_SFDC_API.cs" />
+    <Compile Include="Format_Listbox_SFDC_API.cs" />
+    <Compile Include="Get_Data.cs" />
+    <Compile Include="Get_Data_Wizard.cs" />
+    <Compile Include="Subscriber\Add_Subscriber.cs" />
+    <Compile Include="Subscriber\Delete_Subscriber.cs" />
+    <Compile Include="Subscriber\Get_Subscriber_List.cs" />
+    <Compile Include="Subscriber\Update_Subscriber.cs" />
+    <Compile Include="List\Add_List.cs" />
+    <Compile Include="List\Delete_List.cs" />
+    <Compile Include="List\Get_List_List.cs" />
+    <Compile Include="List\Update_List.cs" />
+    <Compile Include="Salesforce_Marketing_Cloud_Scope.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\CmdRestAPI.cs" />
+    <Compile Include="Utilities\SmallClassDefenition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\MCser\etframework.wsdl" />
+    <None Include="Connected Services\MCser\ETFrameworkFault.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.APIObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.ConfigureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.ConfigureResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.CreateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.CreateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.DeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.DeleteResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.DescribeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.ExecuteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.ExecuteResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.ExtractResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.ExtractResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.GetSystemStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.ObjectDefinition.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.PerformResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.PerformResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.QueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.RetrieveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.ScheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.ScheduleResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.SystemStatusResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.UpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.UpdateResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.VersionInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\MCser\UiPathTeam.Salesforce.Marketing_Cloud.MCser.VersionInfoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\MCser\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MCser\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MCser\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MCser\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

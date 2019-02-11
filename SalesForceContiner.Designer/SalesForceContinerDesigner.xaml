@@ -1,0 +1,49 @@
+﻿<sap:ActivityDesigner x:Class="UiPathTeam.Salesforce.Marketing_Cloud.Activities.SalesforceLightningDesigner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+                xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+                xmlns:sapc="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" ExpandState="False" Collapsible="False">
+
+    <sap:ActivityDesigner.Icon>
+        <DrawingBrush Stretch="Uniform" Viewbox="0,0,26.168,32.449" ViewboxUnits="Absolute">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Brush="#FF616262" Geometry="M23.817998,30.097023 L6.069,30.097023 6.069,2.3520009 23.817998,2.3520009 z M24.992998,0.001999025 L4.8940002,0.001999025 3.2490004,0.001999025 C3.2250004,0.001999025 3.2010004,0.0069990289 3.1770004,0.0089990305 3.1610004,0.0079990297 3.1460004,0.001999025 3.1290004,0.001999025 3.1150004,0.001999025 3.0550004,-9.7656334E-07 3.0420004,-9.7656334E-07 1.5280006,-9.7656334E-07 7.6293937E-07,0.80099965 7.6293937E-07,2.588001 L7.6293937E-07,13.57601 7.6293937E-07,18.873014 7.6293937E-07,29.861022 C7.6293937E-07,31.647024 1.5280006,32.449024 3.0420004,32.449024 3.0550004,32.449024 3.1150004,32.447024 3.1290004,32.447024 3.1450004,32.446024 3.1600004,32.442024 3.1770004,32.441024 3.2000004,32.442024 3.2240004,32.449024 3.2490004,32.449024 L4.8940002,32.449024 24.992998,32.449024 C25.642998,32.449024 26.167998,31.922024 26.167998,31.273023 L26.167998,1.1759999 C26.167998,0.52799944 25.642998,0.001999025 24.992998,0.001999025" />
+                    <DrawingGroup>
+                        <DrawingGroup.Transform>
+                            <MatrixTransform Matrix="1,0,0,1,9.568,9.456" />
+                        </DrawingGroup.Transform>
+                        <GeometryDrawing Brush="#FF616262" Geometry="M0.70499869,1.4110219 L4.3750005,1.4110219 C4.7660007,1.4110219 5.0810009,1.0950106 5.0810009,0.70599675 5.0810009,0.31598284 4.7660007,-2.8418982E-05 4.3750005,-2.8418982E-05 L0.70499869,-2.8418982E-05 C0.31599849,-2.8418982E-05 -1.6662606E-06,0.31598284 -1.6662606E-06,0.70599675 -1.6662606E-06,1.0950106 0.31599849,1.4110219 0.70499869,1.4110219" />
+                    </DrawingGroup>
+                    <DrawingGroup>
+                        <DrawingGroup.Transform>
+                            <MatrixTransform Matrix="1,0,0,1,9.568,14.833" />
+                        </DrawingGroup.Transform>
+                        <GeometryDrawing Brush="#FF616262" Geometry="M0.70499867,1.4110298 L10.227003,1.4110298 C10.617003,1.4110298 10.933003,1.0950185 10.933003,0.70500462 10.933003,0.31699079 10.617003,-2.0508543E-05 10.227003,-2.0508543E-05 L0.70499867,-2.0508543E-05 C0.31599848,-2.0508543E-05 -1.6662606E-06,0.31699079 -1.6662606E-06,0.70500462 -1.6662606E-06,1.0950185 0.31599848,1.4110298 0.70499867,1.4110298" />
+                    </DrawingGroup>
+                    <DrawingGroup>
+                        <DrawingGroup.Transform>
+                            <MatrixTransform Matrix="1,0,0,1,9.568,20.209" />
+                        </DrawingGroup.Transform>
+                        <GeometryDrawing Brush="#FF616262" Geometry="M0.70499867,1.4110156 L10.227003,1.4110156 C10.617003,1.4110156 10.933003,1.095018 10.933003,0.705021 10.933003,0.31602396 10.617003,2.6366987E-05 10.227003,2.6366987E-05 L0.70499867,2.6366987E-05 C0.31599848,2.6366987E-05 -1.6662606E-06,0.31602396 -1.6662606E-06,0.705021 -1.6662606E-06,1.095018 0.31599848,1.4110156 0.70499867,1.4110156" />
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+    </sap:ActivityDesigner.Icon>
+
+    <sap:ActivityDesigner.Resources>
+        <ResourceDictionary>
+            <sapc:ArgumentToExpressionConverter x:Key="ArgumentToExpressionConverter" />
+            <ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </sap:ActivityDesigner.Resources>
+    <DockPanel LastChildFill="True">
+        <Button x:Name="btConnection" Height="23" Content="Test Connection" DockPanel.Dock="Top" Margin="6,1,0,0" HorizontalAlignment="Left" Click="btConnection_Click" />
+        <sap:WorkflowItemPresenter x:Uid="sad:WorkflowItemPresenter_1"  AutomationProperties.AutomationId="Activity" Margin="0,10,0,0"
+                        Item="{Binding Path=ModelItem.Body.Handler, Mode=TwoWay}" AllowedItemType="{x:Type sa:Activity}" HintText="Drop activity here" MinWidth="400" DockPanel.Dock="Bottom" />
+    </DockPanel>
+
+</sap:ActivityDesigner>
