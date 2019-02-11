@@ -24,6 +24,7 @@ namespace UiPathTeam.Salesforce.Marketing_Cloud.Activities
                 AuthToken = Salesforce_Marketing_Cloud_Scope.Design_AUTH;
                 ServiceURL = Salesforce_Marketing_Cloud_Scope.Design_SERVICES;
             }
+            //Command has issues
             ConvertModelToString tmp = new ConvertModelToString();
             String search = tmp.ConvertModelItem(ModelItem.Properties["Search"].ComputedValue);
             if (search == null) search = "";                         

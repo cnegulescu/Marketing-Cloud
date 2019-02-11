@@ -35,7 +35,7 @@ namespace UiPathTeam.Salesforce.Marketing_Cloud
         public OutArgument<Boolean> ValidConnection { get; set; }
 
         protected override IAsyncResult BeginExecute(AsyncCodeActivityContext context, AsyncCallback callback, object state)
-        {
+        {           
             var property = context.DataContext.GetProperties()[Salesforce_Marketing_Cloud_Scope.SalesForcePropertyTag];
             var salesForceProperty = property.GetValue(context.DataContext) as SalesForceProperty;
 
