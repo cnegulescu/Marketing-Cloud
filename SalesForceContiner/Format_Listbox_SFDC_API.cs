@@ -5,6 +5,7 @@ using System.ComponentModel;
 
 namespace UiPathTeam.Salesforce.Marketing_Cloud
 {
+    [Browsable(false)]
     [Description("Prepare any Listbox for the Salesforce instance input or update. You must provide your String and List as an input.")]
     [DisplayName("Format listbox for SFDC")]
     public class Format_Listbox_SFDC_API : CodeActivity

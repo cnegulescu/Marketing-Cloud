@@ -17,7 +17,7 @@ namespace UiPathTeam.Salesforce.Marketing_Cloud.Activities
         {
             ConvertModelToString tmp = new ConvertModelToString();
             Int32 cmd_Type = Convert.ToInt32(ModelItem.Properties["cmdTYPE"].ComputedValue);
-            String ID2 = tmp.ConvertModelItem(ModelItem.Properties["OpportunityID"].ComputedValue);
+            String ID2 = tmp.ConvertModelItem(ModelItem.Properties["SubcriberKey"].ComputedValue);
             if (ID2 == null) ID2 = "";
             ParametersWizard wizard = new ParametersWizard(ModelItem, cmd_Type, "", ID2);
             wizard.ShowOkCancel();

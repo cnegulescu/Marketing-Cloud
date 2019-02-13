@@ -4,6 +4,7 @@ using System.ComponentModel;
 
 namespace UiPathTeam.Salesforce.Marketing_Cloud
 {
+    [Browsable(false)]
     [Description("Prepare any String datetime for the Salesforce instance input or update. You must provide your String date as an input.")]
     [DisplayName("Format date for SFDC")]
     public class Format_DateTime_SFDC_API : CodeActivity

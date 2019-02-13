@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace UiPathTeam.Salesforce.Marketing_Cloud
 {
+    [Browsable(false)]
     [Description("Get a list of Campaigns from the Salesforce instance.")]
     public class Get_Campaign_List : AsyncCodeActivity<CmdRestAPI>
     {

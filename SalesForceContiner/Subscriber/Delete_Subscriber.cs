@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace UiPathTeam.Salesforce.Marketing_Cloud
 {
-    [Description("Delete an opportunity from the Salesforce instance. You must provide OpportunityID")]
+    [Description("Delete an opportunity from the Salesforce instance. You must provide SubcriberKey")]
     public class Delete_Subscriber : AsyncCodeActivity<CmdRestAPI>
     {
         public Delete_Subscriber()

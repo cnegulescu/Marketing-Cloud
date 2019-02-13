@@ -272,27 +272,72 @@ namespace UiPathTeam.Salesforce.Marketing_Cloud
                                 }
                                 cResults = soapClient.Create(new MCser.CreateOptions(), new MCser.APIObject[] { dataTMP }, out cRequestID, out cStatus);
                                 break;
-                        }
-                        Response+= "Overall Status: " + cStatus + Environment.NewLine + "Number of Results: " + cResults.Length + Environment.NewLine;
-                        foreach (MCser.CreateResult cr in cResults)
-                        {
-                            Response += "Status Message: " + cr.StatusMessage + Environment.NewLine;
-                            ID = cr.NewID.ToString();
-                            Int32 IDnr = 0;
-                            if (Int32.TryParse(ID, out IDnr))
-                            {
-                                if (IDnr == 0)
+                            case Type_of_Command.AddCampaign:
+                                insertPacket = "{";
+                                foreach (DataRow rowitem in parameters.Rows)
                                 {
-                                    if (cmd == Type_of_Command.AddDataExtension)
+                                    strtmp = "" + rowitem[1].ToString();
+                                    if (strtmp.Trim().ToUpper().Equals("TRUE")) strtmp = "true";
+                                    else if (strtmp.Trim().ToUpper().Equals("FALSE")) strtmp = "false";
+                                    insertPacket += "\"" + rowitem[0].ToString() + "\":\"" + strtmp + "\",";
+                                }                  
+                                
+                                insertPacket = insertPacket.Remove(insertPacket.Length - 1);
+                                insertPacket += "}";
+                                insertString = new StringContent(insertPacket, Encoding.UTF8, "application/json");
+
+                                    restCallURL = serviceURL + "/hub/v1/campaigns";
+                                    apirequest = new HttpRequestMessage(HttpMethod.Post, restCallURL);
+                                    apirequest.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                                    apirequest.Headers.Add("Authorization", "Bearer " + authToken);
+                                    apirequest.Content = insertString;
+                                    apiCallResponse = await apiCallClient.SendAsync(apirequest);
+                                    requestresponse = await apiCallResponse.Content.ReadAsStringAsync();
+
+                                    Response = requestresponse;
+                                    ValidConnection = true;
+                                    if (apiCallResponse.IsSuccessStatusCode)
                                     {
-                                        ID = IDName;
+                                         dynamic item = JsonConvert.DeserializeObject(requestresponse);
+                                         ID = item.id;                                        
                                     }
-                                    else ID = strGUID;
+                                    else
+                                    {
+                                        ValidConnection = false;
+                                        ID = insertPacket;
+                                    }                                
+                                break;
+                        }
+                        if (cmd != Type_of_Command.AddCampaign)
+                        {
+                            Response += "Overall Status: " + cStatus + Environment.NewLine + "Number of Results: " + cResults.Length + Environment.NewLine;
+                            foreach (MCser.CreateResult cr in cResults)
+                            {
+                                Response += "Status Message: " + cr.StatusMessage + Environment.NewLine;
+                                ID = cr.NewID.ToString();
+                                Int32 IDnr = 0;
+                                if (Int32.TryParse(ID, out IDnr))
+                                {
+                                    if (IDnr == 0)
+                                    {
+                                        if (cmd == Type_of_Command.AddDataExtension)
+                                        {
+                                            ID = IDName;
+                                        }
+                                        else ID = strGUID;
+                                    }
+                                    else
+                                    {
+                                        if (cmd == Type_of_Command.AddSubscriber)
+                                        {
+                                            ID = strGUID;
+                                        }
+                                    }
                                 }
                             }
+                            if (cStatus.Equals("OK")) ValidConnection = true;
+                            else ValidConnection = false;
                         }
-                        if (cStatus.Equals("OK")) ValidConnection = true;
-                        else ValidConnection = false;
                     }
                     catch (Exception exc)
                     {
@@ -522,15 +567,31 @@ namespace UiPathTeam.Salesforce.Marketing_Cloud
                                 //listTMP.IDSpecified = true;
                                 cResults = soapClient.Delete(new MCser.DeleteOptions(), new MCser.APIObject[] { dataobj }, out cRequestID, out cStatus);
                                 break;
+                            case Type_of_Command.DeleteCampaign:
+                                restCallURL = serviceURL + "/hub/v1/campaigns/" + idDecision.Trim();
+                                apirequest = new HttpRequestMessage(HttpMethod.Delete, restCallURL);
+                                apirequest.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                                apirequest.Headers.Add("Authorization", "Bearer " + authToken);
+                                apiCallResponse = await apiCallClient.SendAsync(apirequest);
+                                requestresponse = await apiCallResponse.Content.ReadAsStringAsync();
+
+                                Response = requestresponse;
+                                ValidConnection = true;
+                                if (!apiCallResponse.IsSuccessStatusCode)
+                                    ValidConnection = false;
+                                break;
 
                         }
-                        Response = "Overall Status: " + cStatus + Environment.NewLine + "Number of Results: " + cResults.Length + Environment.NewLine;
-                        foreach (MCser.DeleteResult cr in cResults)
+                        if (cmd != Type_of_Command.DeleteCampaign)
                         {
-                            Response+= "Status Message: " + cr.StatusMessage + Environment.NewLine;
+                            Response = "Overall Status: " + cStatus + Environment.NewLine + "Number of Results: " + cResults.Length + Environment.NewLine;
+                            foreach (MCser.DeleteResult cr in cResults)
+                            {
+                                Response += "Status Message: " + cr.StatusMessage + Environment.NewLine;
+                            }
+                            if (cStatus.Equals("OK")) ValidConnection = true;
+                            else ValidConnection = false;
                         }
-                        if (cStatus.Equals("OK")) ValidConnection = true;
-                        else ValidConnection = false;
                     }
                     catch (Exception exc)
                     {
@@ -797,7 +858,7 @@ namespace UiPathTeam.Salesforce.Marketing_Cloud
                                     break;
                                 case Type_of_Command.GetMandatorySubscriber:
                                     row = dataTable.NewRow(); row[0] = "EmailAddress"; row[1] = "1"; dataTable.Rows.Add(row);
-                                    row = dataTable.NewRow(); row[0] = "NrOfList"; row[1] = "1"; dataTable.Rows.Add(row);
+                                    row = dataTable.NewRow(); row[0] = "NrOfLists"; row[1] = "1"; dataTable.Rows.Add(row);
                                     row = dataTable.NewRow(); row[0] = "ListID1"; row[1] = "1"; dataTable.Rows.Add(row);
                                     row = dataTable.NewRow(); row[0] = "ListID2"; row[1] = "1"; dataTable.Rows.Add(row);
                                     row = dataTable.NewRow(); row[0] = "NrOfAttributes"; row[1] = "1"; dataTable.Rows.Add(row);

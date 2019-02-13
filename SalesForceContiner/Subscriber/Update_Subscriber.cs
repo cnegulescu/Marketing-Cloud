@@ -15,8 +15,8 @@ namespace UiPathTeam.Salesforce.Marketing_Cloud
 
         [Category("Input")]
         [RequiredArgument]
-        [Description("String Opportunity ID to be updated.")]
-        public InArgument<String> OpportunityID { get; set; }
+        [Description("String Subcriber Key to be updated.")]
+        public InArgument<String> SubcriberKey { get; set; }
 
         [Browsable(false)]
         public List<ParametersArgument> Parameters { get; set; }
@@ -43,7 +43,7 @@ namespace UiPathTeam.Salesforce.Marketing_Cloud
             var property = context.DataContext.GetProperties()[Salesforce_Marketing_Cloud_Scope.SalesForcePropertyTag];
             var salesForceProperty = property.GetValue(context.DataContext) as SalesForceProperty;
 
-            String id = OpportunityID.Get(context);
+            String id = SubcriberKey.Get(context);
 
             var newDataTable = new System.Data.DataTable();
             newDataTable.TableName = "TableName";

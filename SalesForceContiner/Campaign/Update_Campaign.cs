@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace UiPathTeam.Salesforce.Marketing_Cloud
 {
+    [Browsable(false)]
     [Description("Update an campaign from the Salesforce instance. You must provide Campaign ID.")]
     public class Update_Campaign : AsyncCodeActivity<CmdRestAPI>
     {

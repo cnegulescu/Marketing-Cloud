@@ -20,8 +20,8 @@ namespace UiPathTeam.Salesforce.Marketing_Cloud
         public Type_of_Command cmdTYPE { get; set; } 
 
         [Category("Output")]
-        [Description("String response OpportunityID value.")]
-        public OutArgument<string> OpportunityID { get; set; }
+        [Description("String response SubcriberKey value.")]
+        public OutArgument<string> SubcriberKey { get; set; }
 
         [Category("Output")]
         [Description("String response from the server.")]
@@ -73,7 +73,7 @@ namespace UiPathTeam.Salesforce.Marketing_Cloud
         {
             CmdRestAPI temp = ((Task<CmdRestAPI>)result).Result;
             Response.Set(context, temp.Response);
-            OpportunityID.Set(context, temp.ID);
+            SubcriberKey.Set(context, temp.ID);
             ValidConnection.Set(context, temp.ValidConnection);
             return temp;
         }

@@ -20,8 +20,8 @@ namespace UiPathTeam.Salesforce.Marketing_Cloud
         public Type_of_Command cmdTYPE { get; set; } 
 
         [Category("Output")]
-        [Description("String response DataExtensionID value.")]
-        public OutArgument<string> DataExtensionID { get; set; }
+        [Description("String response DataExtensionKey value.")]
+        public OutArgument<string> DataExtensionKey { get; set; }
 
         [Category("Output")]
         [Description("String response from the server.")]
@@ -73,7 +73,7 @@ namespace UiPathTeam.Salesforce.Marketing_Cloud
         {
             CmdRestAPI temp = ((Task<CmdRestAPI>)result).Result;
             Response.Set(context, temp.Response);
-            DataExtensionID.Set(context, temp.ID);
+            DataExtensionKey.Set(context, temp.ID);
             ValidConnection.Set(context, temp.ValidConnection);
             return temp;
         }

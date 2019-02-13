@@ -219,7 +219,7 @@ namespace UiPathTeam.Salesforce.Marketing_Cloud.Activities
                         row = dataTable.NewRow(); row["DisplayName"] = row["Name"] = "PartnerType"; row["Value"] = "String"; dataTable.Rows.Add(row);
                         row = dataTable.NewRow(); row["DisplayName"] = row["Name"] = "SubscriberKey"; row["Value"] = "String"; dataTable.Rows.Add(row);
 
-                        row = dataTable.NewRow(); row["DisplayName"] = row["Name"] = "NrOfList"; row["Value"] = "Number"; dataTable.Rows.Add(row);
+                        row = dataTable.NewRow(); row["DisplayName"] = row["Name"] = "NrOfLists"; row["Value"] = "Number"; dataTable.Rows.Add(row);
                         row = dataTable.NewRow(); row["DisplayName"] = row["Name"] = "ListID1"; row["Value"] = "Number"; dataTable.Rows.Add(row);
                         row = dataTable.NewRow(); row["DisplayName"] = row["Name"] = "ListID2"; row["Value"] = "Number"; dataTable.Rows.Add(row);
 
@@ -229,6 +229,16 @@ namespace UiPathTeam.Salesforce.Marketing_Cloud.Activities
                         row = dataTable.NewRow(); row["DisplayName"] = row["Name"] = "Name2"; row["Value"] = "String"; dataTable.Rows.Add(row);
                         row = dataTable.NewRow(); row["DisplayName"] = row["Name"] = "Value2"; row["Value"] = "String"; dataTable.Rows.Add(row);
 
+                        break;
+
+                    case Type_of_Command.AddCampaign:
+                    case Type_of_Command.UpdateCampaign:
+                        row = dataTable.NewRow(); row["DisplayName"] = row["Name"] = "name"; row["Value"] = "String"; dataTable.Rows.Add(row);
+                        row = dataTable.NewRow(); row["DisplayName"] = row["Name"] = "description"; row["Value"] = "String"; dataTable.Rows.Add(row);
+                        row = dataTable.NewRow(); row["DisplayName"] = row["Name"] = "campaignCode"; row["Value"] = "String"; dataTable.Rows.Add(row);
+                        row = dataTable.NewRow(); row["DisplayName"] = row["Name"] = "color"; row["Value"] = "0000FF HEX VALUE"; dataTable.Rows.Add(row);
+                        row = dataTable.NewRow(); row["DisplayName"] = row["Name"] = "favorite"; row["Value"] = "Boolean"; dataTable.Rows.Add(row);
+                        
                         break;
 
                     case Type_of_Command.AddDataExtension:

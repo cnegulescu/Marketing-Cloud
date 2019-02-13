@@ -5,6 +5,7 @@ using System.ComponentModel;
 
 namespace UiPathTeam.Salesforce.Marketing_Cloud
 {
+    [Browsable(false)]
     [Description("Prepare any combobox for the Salesforce instance input or update. You must provide your String and a List as an input.")]
     [DisplayName("Format combobox for SFDC")]
     public class Format_Combobox_SFDC_API : CodeActivity
